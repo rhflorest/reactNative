@@ -1,7 +1,9 @@
 FROM anthonymonori/android-ci-image:latest
 RUN apt-get update -y
+RUN apt-get install npm
 RUN apt-get install -y nodejs
 RUN npm install -g n
+RUN npm i -g react-native
 RUN n latest
 RUN node --version
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
@@ -10,4 +12,3 @@ ENV GRADLE_HOME=/opt/gradle/gradle-7.2
 ENV PATH=${GRADLE_HOME}/bin:${PATH}
 RUN gradle -v
 RUN yes | sdkmanager --licenses || true
-RUN npm i react-native
