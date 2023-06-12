@@ -1,6 +1,5 @@
 FROM anthonymonori/android-ci-image:latest
 RUN apt-get update -y
-RUN apt-get install npm
 RUN apt-get install -y nodejs
 RUN npm install -g n
 RUN npm i -g react-native
