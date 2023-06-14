@@ -13,7 +13,7 @@ RUN . "$NVM_DIR/nvm.sh" && nvm install $SHIPPABLE_NODE_VERSION && nvm use $SHIPP
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default $SHIPPABLE_NODE_VERSION
 RUN . "$NVM_DIR/nvm.sh" && npm install -g npm
 RUN . "$NVM_DIR/nvm.sh" && npm install -g n
-RUN npm i -g react-native
+RUN . "$NVM_DIR/nvm.sh" && npm i -g react-native
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
 RUN unzip -d /opt/gradle /tmp/gradle-*.zip
 ENV GRADLE_HOME=/opt/gradle/gradle-7.2
