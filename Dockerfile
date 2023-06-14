@@ -1,7 +1,8 @@
 FROM anthonymonori/android-ci-image:latest
 RUN apt-get update -y
 RUN dpkg --configure -a
-RUN apt-get install --reinstall util-linux
+RUN dpkg --compare-versions $(dpkg-query -W -f='${Version}' util-linux) lt-nl
+RUN apt-get install --reinstall -o Dpkg::Options::="--force-confmiss" util-linux
 RUN apt-get upgrade -y
 RUN apt-get install -y nodejs
 RUN npm install -g n
