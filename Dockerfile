@@ -7,7 +7,10 @@ RUN apt-get install curl
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x
 RUN apt-get install -y nodejs
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-RUN nvm use 16
+ENV NVM_DIR /root/.nvm
+ENV SHIPPABLE_NODE_VERSION 16
+RUN . "$NVM_DIR/nvm.sh" && nvm install $SHIPPABLE_NODE_VERSION && nvm use $SHIPPABLE_NODE_VERSION
+RUN . "$NVM_DIR/nvm.sh" && nvm alias default $SHIPPABLE_NODE_VERSION
 RUN npm install -g n
 RUN npm i -g react-native
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
