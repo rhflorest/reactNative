@@ -3,6 +3,8 @@ RUN apt-get update -y
 RUN dpkg --configure -a
 RUN apt-get -o Dpkg::Options::="--force-confnew" install --reinstall util-linux
 RUN apt-get upgrade -y
+RUN apt-get install curl
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
 RUN apt-get install -y nodejs=14.21.3
 RUN npm install -g n
 RUN npm i -g react-native
