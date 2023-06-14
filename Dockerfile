@@ -8,8 +8,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x
 RUN apt-get install -y nodejs
 RUN npm install -g n
 RUN npm i -g react-native
-RUN n latest
-RUN node --version
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
 RUN unzip -d /opt/gradle /tmp/gradle-*.zip
 ENV GRADLE_HOME=/opt/gradle/gradle-7.2
