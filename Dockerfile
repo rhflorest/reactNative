@@ -11,7 +11,7 @@ ENV NVM_DIR /root/.nvm
 ENV SHIPPABLE_NODE_VERSION 16
 RUN . "$NVM_DIR/nvm.sh" && nvm install $SHIPPABLE_NODE_VERSION && nvm use $SHIPPABLE_NODE_VERSION
 RUN . "$NVM_DIR/nvm.sh" && nvm alias default $SHIPPABLE_NODE_VERSION
-RUN npm install -g n
+RUN npm i -g n
 RUN npm i -g react-native
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
 RUN unzip -d /opt/gradle /tmp/gradle-*.zip
