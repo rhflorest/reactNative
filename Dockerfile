@@ -16,7 +16,7 @@ RUN . "$NVM_DIR/nvm.sh" && npm install -g n
 RUN . "$NVM_DIR/nvm.sh" && npm i -g react-native
 RUN  wget https://services.gradle.org/distributions/gradle-7.3.1-bin.zip -P /tmp
 RUN unzip -d /opt/gradle /tmp/gradle-*.zip
-ENV GRADLE_HOME=/opt/gradle/gradle-7.2
+ENV GRADLE_HOME=/opt/gradle/gradle-7.3.1
 ENV PATH=${GRADLE_HOME}/bin:${PATH}
 RUN gradle -v
 RUN yes | sdkmanager --licenses || true
