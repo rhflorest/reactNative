@@ -1,4 +1,4 @@
-FROM anthonymonori/android-ci-image:latest
+FROM fabernovel/android:api-33-v1.7.0
 RUN apt-get update -y
 RUN dpkg --configure -a
 RUN apt-get -o Dpkg::Options::="--force-confnew" install --reinstall util-linux
