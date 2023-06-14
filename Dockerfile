@@ -6,6 +6,8 @@ RUN apt-get upgrade -y
 RUN apt-get install curl
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x
 RUN apt-get install -y nodejs
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+RUN nvm use 16
 RUN npm install -g n
 RUN npm i -g react-native
 RUN  wget https://services.gradle.org/distributions/gradle-7.2-bin.zip -P /tmp
