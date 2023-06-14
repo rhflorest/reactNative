@@ -7,7 +7,6 @@ RUN apt-get install curl
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x
 RUN apt-get install -y nodejs
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-RUN export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 RUN nvm use 16
 RUN npm install -g n
 RUN npm i -g react-native
