@@ -1,5 +1,6 @@
 FROM anthonymonori/android-ci-image:latest
 RUN apt-get update -y
+RUN dpkg --configure -a
 RUN apt-get install --reinstall util-linux
 RUN apt-get upgrade -y
 RUN apt-get install -y nodejs
